@@ -7,12 +7,12 @@
 	
 	
 	How to Pie:
-	http://mistercss.blogspot.com/2013/04/pie-chart-javascript-library.html
-	https://code.google.com/p/css-pie/wiki/HowToPie
+	mistercss.blogspot.com/2013/04/pie-chart-javascript-library.html
+	code.google.com/p/css-pie/wiki/HowToPie
 	
 	Download from:
-	https://code.google.com/p/css-pie/downloads/list
-	
+	code.google.com/p/css-pie/downloads/list
+	github.com/AliBassam/css-pie
 	
 	by : 	Ali Bassam
 			alibassam.27@gmail.com
