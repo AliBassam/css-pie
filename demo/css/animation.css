@@ -1,0 +1,81 @@
+/* Body Background Color Change */
+@-webkit-keyframes bgcolor {
+	0% {
+		background-color: blue;
+	}
+	20% {
+		background-color: green;
+	}
+	40% {
+		background-color: yellow;
+	}
+	60% {
+		background-color: red;
+	}
+	80% {
+		background-color: purple;
+	}
+	100% {
+		background-color: blue;
+	}
+}
+@-moz-keyframes bgcolor {
+	0% {
+		background-color: blue;
+	}
+	20% {
+		background-color: green;
+	}
+	40% {
+		background-color: yellow;
+	}
+	60% {
+		background-color: red;
+	}
+	80% {
+		background-color: purple;
+	}
+	100% {
+		background-color: blue;
+	}
+}
+@-ms-keyframes bgcolor {
+	0% {
+		background-color: blue;
+	}
+	20% {
+		background-color: green;
+	}
+	40% {
+		background-color: yellow;
+	}
+	60% {
+		background-color: red;
+	}
+	80% {
+		background-color: purple;
+	}
+	100% {
+		background-color: blue;
+	}
+}
+@keyframes bgcolor {
+	0% {
+		background-color: blue;
+	}
+	20% {
+		background-color: green;
+	}
+	40% {
+		background-color: yellow;
+	}
+	60% {
+		background-color: red;
+	}
+	80% {
+		background-color: purple;
+	}
+	100% {
+		background-color: blue;
+	}
+}

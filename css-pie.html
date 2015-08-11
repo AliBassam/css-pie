@@ -1,0 +1,192 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../css-pie-slice/css-pie-slice.html"></head>
+
+<!--
+Draw a CSS Pie Chart Component on your webpage.
+
+Example:
+
+Static Pie Chart:
+
+    <css-pie name='students' size='300' size-init='px' base-color='#FFF' slices='[{"size": "10", "color" : "lightgreen"},{"size" : "65","color" : "lightgray"}]'></css-pie>
+
+Dynamic Pie Chart:
+	<pre><code>
+	var slice1 = {
+		size: 10,
+		color: 'lightgreen'
+	};
+	var slice2 = {
+		size: 65,
+		color: 'lightgray'
+	};
+	var arrayOfSlices = new Array();
+	arrayOfSlices.push(slice1);
+	arrayOfSlices.push(slice2);
+	var pie = new CSSPie('students',300,'px','#FFF',arrayOfSlices);
+	document.body.appendChild(pie);
+	</pre></code>
+
+@demo
+-->
+<dom-module id="css-pie">
+    <style>
+    :host {
+        display: inline-block;
+        width: var(--css-pie-size);
+        height: var(--css-pie-size);
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
+    :host > div {
+        position: relative;
+        background-color: var(--css-pie-background-color);
+        width: 100%;
+        height: 100%;
+        -webkit-border-radius: 100%;
+        -moz-border-radius: 100%;
+        border-radius: 100%;
+    }
+    </style>
+
+    <template>
+        <div>
+        </div>
+    </template>
+
+<script>
+    CSSPie = Polymer({
+        is: 'css-pie',
+        properties: {
+            /*
+            **  'name' indicates the ID of the Pie
+            */
+            name: {
+                type: String
+            },
+            /*
+            **  'size' indicates the Size of the Pie
+            */
+            size: {
+                type: Number,
+                value: 200
+            },
+            /*
+            **  'sizeUnit' indicates the Unit of measurement to be used for the Size
+            */
+            sizeUnit: {
+                type: String,
+                value: 'px'
+            },
+            /*
+            **  'baseColor' indicates the main Color of the Pie
+            */
+            baseColor: {
+                type: String,
+                value: '#FFFFFF'
+            },
+            /*
+            'slices' should contain the Array of Pie Slices
+            The array should contain Objects with 2 parameters
+            size' and 'color'
+            example:
+            var array = new Array();
+            var Slice = {
+              size: 43,
+              color: '#F83212'
+            }
+            array.push(Slice);
+            */
+            slices: {
+                type: Array
+            },
+            /*
+            ** used for calculations
+            */
+            degree: {
+                type: Number,
+                value: 0
+            },
+            /*
+            ** used for calculations
+            */
+            beforeDegree: {
+                type: Number,
+                value: 0
+            }
+        },
+        ready: function() {
+        },
+        /**
+        *   Constructor to be used when creating a Pie
+        *
+        *   @param {string} name The ID of the Pie
+        *   @param {number} size The Size of the Pie
+        *   @param {string} sizeUnit The Unit of measurement
+        *   @param {string} baseColor The background color of the Pie
+        *   @param {array} slices Array of Pie Slices
+        **/
+        factoryImpl: function(name,size,sizeUnit,baseColor,slices) {
+            var host = this;
+            if(name != null)
+                host.name = name;
+            if(size != null)
+                host.size = size;
+            if(sizeUnit != null)
+                host.sizeUnit = sizeUnit;
+            if(baseColor != null)
+                host.baseColor = baseColor;
+            if(slices != null)
+                host.slices = slices;
+        },
+        /**
+        *   This is where the Pie is cooked!
+        **/
+        attached: function() {
+            var host = this;
+            //Set ID
+            host.id = host.name;
+            //Create Slices
+            for(var i=0; i<this.slices.length; i++) {
+                //Create Slice Instance
+                var slice = new CSSPieSlice(i,host.slices[i].size,host.slices[i].color,host.size,host.sizeUnit,host.degree,host.beforeDegree);
+              
+                //Add Event Listener
+                slice.addEventListener("degree-changed", function(e){
+                    host.degree = this.degree;
+                });
+                //Add Event Listener
+                slice.addEventListener("before-degree-changed", function(e){
+                    host.beforeDegree = this.beforeDegree;
+                });
+                //Add to DOM
+                Polymer.dom(host.$$("div")).appendChild(slice);
+            }
+            //Apply CSS
+            host._updatePie();
+        },
+        attributeChanged: function(name, type) {
+            var host = this;
+            this.async(function() {
+                host._updatePie();
+            });
+        },
+        _updatePie: function() {
+            var host = this;
+            host.customStyle['--css-pie-background-color'] = host.baseColor;
+            host.customStyle['--css-pie-size'] = host.size + host.sizeUnit;
+            host.updateStyles();
+        }
+    });
+    </script>
+</dom-module>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS pie</title>
+		<meta name="description" content="Create a CSS3 Pie Chart with simple DOM objects, no images, no additions, only using a Super Tiny JavaScript Library">
+		<meta name="keywords" content="html css javascript pie chart generator css3">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link href="css/reset.css" rel="stylesheet"/>
+		<link href="css/animation.css" rel="stylesheet"/>
+		<link href="css/main.css" rel="stylesheet"/>
+		<link href="css/desktop.css" media="screen and (min-width: 1024px)" rel="stylesheet"/>
+		<link href="css/mobile.css" media="screen and (min-device-width: 480px) and (max-device-width: 1024px)" rel="stylesheet"/>
+		<link href="css/mobile.css" media="screen and (max-device-width: 480px)" rel="stylesheet"/>
+	</head>
+	<body>
+		<div>
+			<header class="clearfix radius2">
+				<div>
+					<h1>CSSpie.js</h1>
+					<br/>
+					<br/>
+					<span class="radius2">Pure CSS3 Pie Chart Generator</span>
+				</div>
+				<div id="github-buttons">
+					<table><tr><td><iframe src="http://ghbtns.com/github-btn.html?user=AliBassam&repo=css-pie&type=watch&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td><td><iframe src="http://ghbtns.com/github-btn.html?user=AliBassam&repo=css-pie&type=fork&count=true&size=large" height="30" width="170" frameborder="0" scrolling="0" style="width:170px; height: 30px;" allowTransparency="true"></iframe></td></tr></table>
+				</div>
+			</header>
+			<main>
+				<article>
+					<section>
+						<h2>What is it?</h2>
+						<p>
+							CSSpie.js is JavaScript library that allows you to create a dynamic CSS3 Pie Chart with only 1 line of code.
+						</p>
+					</section>
+					<section>
+						<h2>Try the Generator</h2>
+						<p>
+							This is a the Pie Chart Generator, set the colors and the percentages of each slice and witness the magic.
+						</p>
+						<div>
+							<form name="pie-generator-form">
+								<div class="form-section">
+									<div class="form-section-element">
+										<label class="radius2">Pie Name</label>
+										<input type="text" placeholder="MyPie" name="pie-id"/>
+									</div>
+									<div class="form-section-element">
+										<label class="radius2">Pie Background Color</label>
+										<input type="text" placeholder="#ABABAB" name="pie-backcolor"/>
+									</div>
+									<div class="form-section-element">
+										<label class="radius2">Pie Size (in pixels)</label>
+										<input type="text" placeholder="200px" name="pie-size"/>
+									</div>
+								</div>
+								<div class="form-section">
+									<div class="form-section-element">
+										<label class="radius2">Number of Slices</label>
+										<input type="text" placeholder="5" name="pie-numslices"/>
+									</div>
+									<div class="form-section-element">
+										<label class="radius2">Percentages</label>
+										<input type="text" placeholder="20,30,25,25" name="pie-percentages"/>
+									</div>
+									<div class="form-section-element">
+										<label class="radius2">Colors</label>
+										<input type="text" placeholder="blue,yellow,#4A3A2A,green" name="pie-colors"/>
+									</div>
+								</div>
+								<div class="form-section">
+									<div class="form-section-element">
+										<input type="submit" class="radius2" value="Create Pie!"/>
+									</div>
+									<div class="form-section-element">
+										<div id="pie-generator-result"></div>
+										<div>
+											<textarea id="pie-generator-result-code" readonly="readonly"></textarea>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</section>
+					<section>
+						<h2>How it works</h2>
+						<p>
+							<h3>Step 1</h3>
+							<p>
+								Include CSSpie.js in your web page.<br/>
+								<code>
+									&lt;script src="CSSpie.js"&gt;&lt;/script&gt;
+								</code>
+							</p>
+							<h3>Step 2</h3>
+							<p>
+								Create the pie using the following code.<br/>
+								<code>
+									&lt;script&gt;<br/>
+										&#09;var pie = createPie(id, size, backColor, numSlices, percentages, colors);<br/>
+									&lt;/script&gt;
+								</code>
+								<ol>
+									<li>
+										<b>id</b>: This is the ID of the pie.
+									</li>
+									<li>
+										<b>size</b>: This is the Size of the pie, pixel values are used here, for example, <i>200px</i>.
+									</li>
+									<li>
+										<b>backColor</b>: This is the Background Color or Base Color of the pie. Any type of color variables can be used, HEX, RGB, or color names.
+									</li>
+									<li>
+										<b>numSlices</b>: This is the Number of Slices in the pie.
+									</li>
+									<li>
+										<b>percentages</b>: This is an Array of Percentages of the slices.
+									</li>
+									<li>
+										<b>colors</b>: This is an Array of Colors of the slices.
+									</li>
+								</ol>
+							</p>
+							<h3>Step 3</h3>
+							<p>
+								Now we must add the pie to the DOM.<br/>
+								<code>
+									&lt;script&gt;<br/>
+										var pie = createPie(id, size, backColor, numSlices, percentages, colors);<br/>
+										document.getElementById("myDiv").appendChild(pie);<br/>
+									&lt;/script&gt;
+								</code>
+							</p>
+						</p>
+						<p>
+							<h3>Examples</h3>
+							<p>
+								<code>
+									createPie("workers","200px","white",5,[10,45,22,11,12],["#FF00FF","#336699","#66CC00","#CC6633","#FFFF99"]);
+								</code>
+								<br/>
+								<img src="img/pie1.png" alt="pie example"  />
+								<br/>
+								<br/>
+								<code>
+									createPie("students","300px","white",3,[55,12,33],["#CCFFFF","#CCFF66","#003333"]);
+								</code>
+								<br/>
+								<img src="img/pie2.png" alt="pie example"  />
+							</p>
+						</p>
+					</section>
+					<section>
+						<h2></h2>
+						<p>
+							<form method="get" action="js/CSSpie.js" onsubmit="_gaq.push(['_trackEvent', 'CSSpie', 'Download']);">
+								<button type="submit">CSSpie.js (4.27 Kb)</button>
+							</form>
+						</p>
+					</section>
+				</article>
+			</main>
+			<footer>
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'csspie-alibassam';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			</footer>
+		</div>
+		<script src="js/CSSpie.js"></script>
+		<script src="js/index.js"></script>
+				<!-- Piwik -->
+		<script type="text/javascript">
+		  var _paq = _paq || [];
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+		    var u="//analytics.alibassam.com/";
+		    _paq.push(['setTrackerUrl', u+'piwik.php']);
+		    _paq.push(['setSiteId', 2]);
+		    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+		</script>
+		<noscript><p><img src="//analytics.alibassam.com/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+		<!-- End Piwik Code -->
+	</body>
+</html>
