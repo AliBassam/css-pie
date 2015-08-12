@@ -1,0 +1,35 @@
+{
+  "name": "css-pie-slice-extension",
+  "version": "0.0.1",
+  "authors": [
+    "Ali Bassam <contact@alibassam.com>"
+  ],
+  "description": "css-pie dependency",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "css-pie",
+    "chart"
+  ],
+  "main": "css-pie-slice-extension.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/AliBassam/css-pie#css-pie-slice-extension",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  }
+}
