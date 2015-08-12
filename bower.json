@@ -21,7 +21,9 @@
     "/demo/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0"
+    "polymer": "Polymer/polymer#^1.0.0",
+    "css-pie-slice": "git://github.com/AliBassam/css-pie#css-pie-slice",
+    "css-pie-slice-extension": "git://github.com/AliBassam/css-pie#css-pie-slice-extension"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
