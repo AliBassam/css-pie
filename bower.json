@@ -18,7 +18,9 @@
   "ignore": [
     "/.*",
     "/test/",
-    "/demo/"
+    "/demo/",
+    "/old-js-library",
+    "index.html"
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
