@@ -15,7 +15,7 @@
 	github.com/AliBassam/css-pie
 	
 	by : 	Ali Bassam
-			alibassam.27@gmail.com
+			contact@alibassam.com
 
 */
 
