@@ -1,6 +1,6 @@
 {
   "name": "css-pie",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "authors": [
     "Ali Bassam <contact@alibassam.com>"
   ],
@@ -23,8 +23,8 @@
     "/.*",
     "/test/",
     "/demo/",
-    "/old-js-library",
-    "index.html"
+    "/old-js-library"
+    
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0"
