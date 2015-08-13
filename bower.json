@@ -23,7 +23,8 @@
     "/.*",
     "/test/",
     "/demo/",
-    "/old-js-library"
+    "/old-js-library",
+    "/index.html"
     
   ],
   "dependencies": {
