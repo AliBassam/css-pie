@@ -1,0 +1,44 @@
+{
+  "name": "css-pie",
+  "authors": [
+    "Ali Bassam <contact@alibassam.com>"
+  ],
+  "description": "Draw a CSS Pie Chart Component on your webpage",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "css-pie",
+    "chart"
+  ],
+  "main": [
+    "css-pie.html",
+    "css-pie-slice.html",
+    "css-piece-slice-extension.html"
+  ],
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/AliBassam/css-pie/",
+  "ignore": [
+    "/.*",
+    "/test/",
+    "/demo/",
+    "/old-js-library"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "_release": "bffd20a9ad",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "bffd20a9ad959d8ac96ad53571ca0c69e3b815dd"
+  },
+  "_source": "git://github.com/AliBassam/css-pie.git",
+  "_target": "master",
+  "_originalSource": "AliBassam/css-pie",
+  "_direct": true
+}
