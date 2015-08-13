@@ -1,6 +1,6 @@
 {
   "name": "css-pie",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "authors": [
     "Ali Bassam <contact@alibassam.com>"
   ],
@@ -12,7 +12,11 @@
     "css-pie",
     "chart"
   ],
-  "main": "css-pie.html",
+  "main": [
+      "css-pie.html",
+      "css-pie-slice.html",
+      "css-piece-slice-extension.html"
+  ],
   "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/AliBassam/css-pie/",
   "ignore": [
@@ -23,9 +27,7 @@
     "index.html"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-    "css-pie-slice": "git://github.com/AliBassam/css-pie#css-pie-slice",
-    "css-pie-slice-extension": "git://github.com/AliBassam/css-pie#css-pie-slice-extension"
+    "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

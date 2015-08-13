@@ -8,31 +8,47 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../css-pie-slice/css-pie-slice.html"></head>
+<link rel="import" href="css-pie-slice.html"></head>
 
 <!--
 Draw a CSS Pie Chart Component on your webpage.
 
-Example:
+<h4>Install using Bower:</h4>
 
-Static Pie Chart:
+<pre><code>bower install --save css-pie</code></pre>
 
-    <css-pie name='students' size='300' size-init='px' base-color='#FFF' slices='[{"size": "10", "color" : "lightgreen"},{"size" : "65","color" : "lightgray"}]'></css-pie>
+<h4>Add to your web page</h4>
 
-Dynamic Pie Chart:
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/css-pie/css-pie.html"> 
+    
+<h4>Static Pie Chart:</h4>
+
+    <body>
+    <css-pie name='students' size='300' size-unit='px' base-color='#FFF' slices='[{"size": "10", "color" : "lightgreen"},{"size" : "65","color" : "lightgray"}]'></css-pie>
+    </body>
+    
+<h4>Dynamic Pie Chart:</h4>
+
 	<pre><code>
+	//Create First Slice
 	var slice1 = {
 		size: 10,
 		color: 'lightgreen'
 	};
+	//Create Second Slice
 	var slice2 = {
 		size: 65,
 		color: 'lightgray'
 	};
+	//Create Empty Array
 	var arrayOfSlices = new Array();
+	//Add Slices to Array
 	arrayOfSlices.push(slice1);
 	arrayOfSlices.push(slice2);
+	//Create the Pie
 	var pie = new CSSPie('students',300,'px','#FFF',arrayOfSlices);
+	//Add the Pie to Body
 	document.body.appendChild(pie);
 	</pre></code>
 
